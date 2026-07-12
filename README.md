@@ -1,181 +1,340 @@
-# Portfolio — Cloud & DevOps Engineer
+# 🚀 Naeem Portfolio
 
-> **Status: v1 · Phase 1 — Foundation.** This phase ships the application
-> shell, design system, tooling, and Docker pipeline only. The portfolio
-> content sections (About, Experience, Projects, Contact) are intentionally
-> **not** built yet and will land in a later phase.
+> A modern, production-grade developer portfolio built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**, designed to showcase my professional experience, technical skills, cloud & DevOps projects, and software engineering journey.
 
-## Project Overview
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?logo=tailwindcss)
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker)
+![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?logo=githubactions)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-A production-grade personal portfolio for a Cloud & DevOps Engineer,
-built to double as a demonstration of modern frontend engineering practices:
-a typed, modular Next.js architecture, a token-driven design system, strict
-tooling, and a container pipeline that mirrors how the app would actually be
-shipped in production.
+---
 
-## Tech Stack
+## 📖 About
 
-| Concern       | Choice                                                        |
-| ------------- | ------------------------------------------------------------- |
-| Framework     | [Next.js 15](https://nextjs.org) (App Router)                 |
-| Language      | TypeScript (strict mode)                                      |
-| Styling       | [Tailwind CSS v4](https://tailwindcss.com) (CSS-first theme)  |
-| UI primitives | [shadcn/ui](https://ui.shadcn.com) + class-variance-authority |
-| Animation     | [Framer Motion](https://www.framer.com/motion/)               |
-| Icons         | [lucide-react](https://lucide.dev)                            |
-| Theming       | [next-themes](https://github.com/pacocoursey/next-themes)     |
-| Forms         | React Hook Form + Zod + `@hookform/resolvers`                 |
-| Fonts         | Geist Sans / Geist Mono                                       |
-| Package mgr   | npm                                                           |
-| Containers    | Docker (multi-stage, Alpine) + Docker Compose                 |
-| CI            | GitHub Actions                                                |
+This repository contains the source code for my personal portfolio website.
 
-## Folder Structure
+The goal of this project goes beyond creating a portfolio—it serves as a real-world engineering project where I continuously practice and implement modern software development, cloud, and DevOps technologies.
+
+This project is being built incrementally using professional software engineering practices, including Git workflows, Docker, CI/CD pipelines, Infrastructure as Code, and automated deployments.
+
+---
+
+## 🎯 Project Goals
+
+- Showcase my professional experience
+- Highlight technical skills and certifications
+- Present real-world cloud and DevOps projects
+- Practice modern frontend engineering
+- Demonstrate production-ready application architecture
+- Implement DevOps best practices from development to deployment
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- Next.js 15 (App Router)
+- React
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Framer Motion
+- Lucide React
+
+## Forms & Validation
+
+- React Hook Form
+- Zod
+
+## Theme
+
+- next-themes
+
+## Tooling
+
+- ESLint
+- Prettier
+- Husky
+- lint-staged
+
+## DevOps
+
+- Docker
+- Docker Compose
+- GitHub Actions
+- Netlify
+- GitHub
+
+---
+
+# 📂 Project Structure
 
 ```
-.
-├── app/                    # App Router: layout, global styles, route segments
+naeem-portfolio/
+
+├── app/
 ├── components/
-│   ├── ui/                 # shadcn/ui primitives (Button, etc.)
-│   ├── layout/              # App shell: Navbar, Footer, Container, Section, theme
-│   ├── sections/            # Page sections (placeholder in Phase 1)
-│   └── shared/               # Small components reused across layout regions
-├── hooks/                   # Reusable React hooks
-├── lib/                      # App-level config & helpers (site config, cn())
-├── utils/                    # Generic, dependency-free utility functions
-├── types/                    # Shared TypeScript types
-├── data/                     # Static content (nav items, social links)
-├── styles/                   # Design tokens & Tailwind v4 theme mapping
+│   ├── layout/
+│   ├── sections/
+│   ├── shared/
+│   └── ui/
+├── data/
+├── hooks/
+├── lib/
 ├── public/
-│   ├── images/               # Static images
-│   ├── icons/                 # Favicon & icon assets
-│   └── resume/                 # Downloadable resume/CV
-├── docker/                    # Supplementary Docker assets (see docker/README.md)
-├── .github/workflows/          # CI pipeline
-├── Dockerfile                   # Multi-stage production image
-├── docker-compose.yml             # Local/production container orchestration
-└── .env.example                    # Documented environment variables
+│   ├── icons/
+│   ├── images/
+│   └── resume/
+├── styles/
+├── types/
+├── utils/
+├── docker/
+├── .github/
+│   └── workflows/
+├── Dockerfile
+├── docker-compose.yml
+├── package.json
+└── README.md
 ```
 
-Every folder has one job: `lib` is app-aware configuration and helpers,
-`utils` is pure and app-agnostic, `data` is static content, `types` is shared
-contracts, and `components/*` is split by how broadly a component is reused
-(`ui` = design-system primitive, `layout` = app shell, `shared` = cross-cutting,
-`sections` = page content).
+---
 
-## Installation
+# ✨ Features (Version 1)
+
+- Modern responsive UI
+- Premium design inspired by Vercel & Linear
+- Dark & Light mode
+- About Me section
+- Experience timeline
+- Skills showcase
+- Project showcase
+- Certifications
+- Resume download
+- Contact section
+- SEO optimized
+- Performance optimized
+
+---
+
+# 🚀 Roadmap
+
+## ✅ Phase 1 — Foundation
+
+- [x] Next.js 15
+- [x] TypeScript
+- [x] Tailwind CSS
+- [x] shadcn/ui
+- [x] Docker
+- [x] Docker Compose
+- [x] ESLint
+- [x] Prettier
+- [x] Husky
+- [x] Theme Support
+
+---
+
+## 🚧 Version 1
+
+- [ ] Responsive Navigation
+- [ ] Hero Section
+- [ ] About
+- [ ] Experience Timeline
+- [ ] Skills
+- [ ] Projects
+- [ ] Certifications
+- [ ] Contact
+- [ ] Footer
+
+---
+
+## 🔜 Version 2
+
+- Admin Dashboard
+- Markdown Blog
+- CMS Integration
+- Contact Form Backend
+- Analytics Dashboard
+- GitHub API Integration
+
+---
+
+## 🔜 Version 3
+
+- Docker Production Deployment
+- AWS EC2 Deployment
+- Nginx Reverse Proxy
+- Terraform Infrastructure
+- CI/CD Pipeline
+- Monitoring & Logging
+
+---
+
+## 🔜 Version 4
+
+- Kubernetes Deployment
+- GitOps Workflow
+- Prometheus & Grafana
+- ArgoCD
+- Production Infrastructure
+
+---
+
+# 💻 Getting Started
+
+## Clone Repository
 
 ```bash
-git clone <your-repo-url>
-cd portfolio
-cp .env.example .env
+git clone https://github.com/naeem-noor/naeem-portfolio.git
+
+cd naeem-portfolio
+```
+
+---
+
+## Install Dependencies
+
+```bash
 npm install
 ```
 
-## Environment Variables
+---
 
-Copy `.env.example` to `.env` and fill in your own values:
-
-| Variable               | Description                                     |
-| ---------------------- | ----------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical site URL, used in metadata/Open Graph |
-| `NEXT_PUBLIC_GITHUB`   | GitHub profile URL                              |
-| `NEXT_PUBLIC_LINKEDIN` | LinkedIn profile URL                            |
-| `NEXT_PUBLIC_EMAIL`    | Contact email address                           |
-
-## Development
+## Start Development Server
 
 ```bash
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000). Dark mode is the
-default theme; use the toggle in the navbar to cycle light → dark → system.
+Open:
 
-### Available scripts
-
-| Script                 | Purpose                           |
-| ---------------------- | --------------------------------- |
-| `npm run dev`          | Start the dev server              |
-| `npm run build`        | Production build                  |
-| `npm run start`        | Serve the production build        |
-| `npm run lint`         | Run ESLint                        |
-| `npm run lint:fix`     | Run ESLint with autofix           |
-| `npm run typecheck`    | Run `tsc --noEmit`                |
-| `npm run format`       | Format the codebase with Prettier |
-| `npm run format:check` | Check formatting without writing  |
-| `npm run docker:build` | Build the production Docker image |
-| `npm run docker:run`   | Build & run via Docker Compose    |
-
-### Git hooks
-
-Husky + lint-staged run on every commit:
-
-1. `lint-staged` — ESLint (`--fix`) and Prettier on staged files
-2. `npm run typecheck` — full-project TypeScript check
-
-A commit is blocked if either step fails.
-
-## Build
-
-```bash
-npm run build
-npm run start
+```
+http://localhost:3000
 ```
 
-`next.config.ts` sets `output: "standalone"`, so `next build` also produces a
-minimal, self-contained server bundle under `.next/standalone` — this is what
-the Docker image copies into its final stage.
+---
 
-## Docker
+# 🐳 Docker
 
-Build and run the production image directly:
+## Build Image
 
 ```bash
-docker build -t portfolio:latest .
-docker run --rm -p 3000:3000 --env-file .env portfolio:latest
+docker build -t naeem-portfolio .
 ```
 
-Or with Compose (recommended — reads `.env` automatically):
+## Run Container
 
 ```bash
-cp .env.example .env   # first time only
+docker run -p 3000:3000 naeem-portfolio
+```
+
+## Docker Compose
+
+```bash
 docker compose up --build
 ```
 
-The app is available at [http://localhost:3000](http://localhost:3000).
-The image is a 3-stage build (`deps` → `builder` → `runner`) on
-`node:22-alpine`, runs as a non-root user, and only ships the traced
-standalone output — no dev dependencies or full `node_modules` in the final
-image.
+---
 
-## Deployment
+# 📦 Available Scripts
 
-The container is platform-agnostic and runs anywhere that accepts a Docker
-image: a VM, a container-orchestration platform (ECS, Cloud Run, AKS/EKS/GKE),
-or a PaaS with Docker support. The included GitHub Actions workflow
-(`.github/workflows/ci.yml`) lints, typechecks, format-checks, builds the app,
-and builds the Docker image on every push and pull request to `main` — wire a
-deploy step onto the end of that pipeline for your target platform (e.g.
-push to a registry and trigger a rolling deploy).
+```bash
+npm run dev          # Development
 
-## Future Roadmap
+npm run build        # Production Build
 
-- [ ] **Phase 2** — Build portfolio content sections: About, Experience,
-      Skills, Projects, Contact form (React Hook Form + Zod validation)
-- [ ] **Phase 3** — Populate `data/` with real project and experience content
-- [ ] **Phase 4** — Add a contact form API route + email delivery
-- [ ] **Phase 5** — SEO pass: structured data, sitemap, `robots.txt`
-- [ ] **Phase 6** — Deployment pipeline: registry push + rolling deploy in CI
-- [ ] **Phase 7** — Add basic component/unit tests
+npm run start        # Start Production
 
-## Code Quality
+npm run lint         # ESLint
 
-- Strict TypeScript, no `any` (enforced via ESLint's
-  `@typescript-eslint/no-explicit-any`)
-- `noUncheckedIndexedAccess` enabled for safer array/object access
-- Single design-token source of truth in `styles/tokens.css`
-- No duplicated layout logic — `Container` and `Section` are the only
-  places that own page width and vertical rhythm
-- Every dependency in `package.json` is actually imported and used somewhere
-  in the codebase
+npm run typecheck    # TypeScript Check
+
+npm run format       # Prettier
+
+npm run prepare      # Husky
+```
+
+---
+
+# 🚀 Deployment
+
+The application is designed to be deployed using:
+
+- Netlify
+- Docker
+- GitHub Actions
+- AWS EC2 (Future)
+- Kubernetes (Future)
+
+---
+
+# 📈 Engineering Principles
+
+This project follows modern engineering practices:
+
+- Feature-based architecture
+- Reusable components
+- Strong TypeScript typing
+- Clean code principles
+- Responsive-first design
+- Accessibility best practices
+- Conventional Commits
+- Automated formatting
+- Automated linting
+- Docker-first development
+- CI/CD ready
+
+---
+
+# 📚 Learning Objectives
+
+This portfolio is also my personal DevOps lab.
+
+Technologies I am actively practicing through this project include:
+
+- Docker
+- GitHub Actions
+- CI/CD
+- Infrastructure as Code
+- Terraform
+- AWS
+- Linux
+- Containerization
+- Deployment Automation
+- Modern React Architecture
+
+---
+
+# 🤝 Contributing
+
+While this is a personal portfolio project, feedback, suggestions, and improvements are always welcome.
+
+Feel free to fork the repository or open an issue.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Naeem Noor**
+
+Technical Support Engineer | Infrastructure | Cloud | DevOps
+
+- LinkedIn: _(Coming Soon)_
+- GitHub: _(Coming Soon)_
+- Portfolio: _(Coming Soon)_
+
+---
+
+## ⭐ Project Status
+
+> 🚧 This project is actively under development and is being built in public using professional software engineering and DevOps practices. New features and improvements will be added incrementally as part of my continuous learning journey.
+
+If you found this project interesting, consider giving it a ⭐ to support the journey.
