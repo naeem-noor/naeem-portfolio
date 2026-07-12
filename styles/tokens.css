@@ -1,0 +1,97 @@
+/**
+ * Design tokens
+ * -----------------------------------------------------------------------------
+ * A single source of truth for the visual language of the product: color,
+ * radius, shadow, and transition primitives. Component-level styling should
+ * always consume these variables rather than hard-coded values so the theme
+ * can be adjusted from one place.
+ *
+ * Palette direction: a graphite/near-black surface system (Vercel/Linear
+ * inspired) with a signal-blue primary and a cyan secondary accent — evoking
+ * network and cloud infrastructure rather than a generic AI-purple gradient.
+ */
+
+:root {
+  /* ---------------------------------------------------------------------- */
+  /* Light theme                                                            */
+  /* ---------------------------------------------------------------------- */
+  --background: #ffffff;
+  --foreground: #0a0a0b;
+
+  --surface: #f7f7f8;
+  --surface-hover: #eeeef0;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+
+  --muted: #f4f4f5;
+  --muted-foreground: #6b6b70;
+
+  --primary: #3e63dd;
+  --primary-foreground: #ffffff;
+  --primary-hover: #3454c4;
+
+  --accent: #0891b2;
+  --accent-foreground: #ffffff;
+
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+
+  --ring: #3e63dd;
+
+  --shadow-color: 220 3% 15%;
+  --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.06);
+  --shadow-md: 0 4px 12px hsl(var(--shadow-color) / 0.08);
+  --shadow-lg: 0 12px 32px hsl(var(--shadow-color) / 0.12);
+
+  /* ---------------------------------------------------------------------- */
+  /* Shape / spacing / motion                                               */
+  /* ---------------------------------------------------------------------- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --container-max: 72rem;
+  --container-padding: 1.5rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.dark {
+  --background: #0a0a0b;
+  --foreground: #f2f2f3;
+
+  --surface: #141416;
+  --surface-hover: #1c1c1f;
+  --border: #27272a;
+  --border-strong: #35353a;
+
+  --muted: #18181b;
+  --muted-foreground: #9b9ba1;
+
+  --primary: #5b7fef;
+  --primary-foreground: #0a0a0b;
+  --primary-hover: #7996f3;
+
+  --accent: #22d3ee;
+  --accent-foreground: #0a0a0b;
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  --ring: #5b7fef;
+
+  --shadow-color: 220 40% 2%;
+  --shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.4);
+  --shadow-md: 0 4px 16px hsl(var(--shadow-color) / 0.45);
+  --shadow-lg: 0 16px 40px hsl(var(--shadow-color) / 0.55);
+}
