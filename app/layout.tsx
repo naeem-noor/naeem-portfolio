@@ -5,6 +5,10 @@ import { GeistSans } from "geist/font/sans";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
+import { LoadingScreen } from "@/components/shared/loading-screen";
+import { PageTransition } from "@/components/shared/page-transition";
+import { ScrollProgress } from "@/components/shared/scroll-progress";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
@@ -60,9 +64,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <LoadingScreen />
+          <ScrollProgress />
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-24">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

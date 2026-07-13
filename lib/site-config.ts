@@ -16,6 +16,8 @@ export const siteConfig = {
   description:
     "Portfolio of a Cloud & DevOps Engineer specializing in infrastructure automation, containerization, and reliable, scalable systems.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? FALLBACK_SITE_URL,
+  /** Served from `public/resume` — drop the actual file at this path. */
+  resumeUrl: "/resume/resume.pdf",
   links: {
     github: process.env.NEXT_PUBLIC_GITHUB ?? "https://github.com",
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN ?? "https://linkedin.com",

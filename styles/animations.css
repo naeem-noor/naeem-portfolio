@@ -1,0 +1,50 @@
+/**
+ * Ambient motion keyframes
+ * -----------------------------------------------------------------------------
+ * Slow, decorative background/illustration motion (floating cards, a
+ * breathing glow) implemented in pure CSS so it can run in a Server
+ * Component with zero JavaScript. Registered as `--animate-*` theme keys in
+ * `theme.css` so they're consumable as ordinary `animate-*` Tailwind
+ * utilities. Interactive, one-shot entrance animations (fades, staggers)
+ * stay in Framer Motion — this file is only for continuous ambient motion.
+ */
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes bounce-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
