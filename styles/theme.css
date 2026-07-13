@@ -1,0 +1,52 @@
+/**
+ * Tailwind v4 theme binding
+ * -----------------------------------------------------------------------------
+ * Tailwind v4 is CSS-first: instead of `tailwind.config.js`, utilities are
+ * generated from an `@theme` block. This file maps the raw design tokens in
+ * `tokens.css` onto Tailwind's semantic namespaces (colors, radius, shadow,
+ * fonts, easing) so classes like `bg-background`, `text-muted-foreground`,
+ * `rounded-md`, and `shadow-lg` resolve to our design system automatically.
+ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --color-ring: var(--ring);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --ease-out: var(--ease-out);
+  --ease-in-out: var(--ease-in-out);
+
+  --container-max: var(--container-max);
+}
