@@ -49,4 +49,9 @@
   --ease-in-out: var(--ease-in-out);
 
   --container-max: var(--container-max);
+
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+  --animate-float-slower: float-slower 8s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 5s ease-in-out infinite;
+  --animate-bounce-y: bounce-y 2s ease-in-out infinite;
 }
