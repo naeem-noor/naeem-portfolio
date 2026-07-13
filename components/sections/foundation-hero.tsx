@@ -23,7 +23,7 @@ export function FoundationHero() {
   return (
     <Section
       id="foundation"
-      className="flex min-h-[calc(100vh-4rem)] items-center"
+      className="flex min-h-[calc(100vh-6rem)] items-center"
     >
       <motion.div
         initial={{ opacity: 0, y: 16 }}

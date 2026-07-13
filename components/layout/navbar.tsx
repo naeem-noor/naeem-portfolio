@@ -2,81 +2,93 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Download, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
+import { MobileNav } from "@/components/layout/mobile-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Logo } from "@/components/shared/logo";
 import { primaryNav } from "@/data/navigation";
+import { useScrollTrigger } from "@/hooks/use-scroll-trigger";
+import { siteConfig } from "@/lib/site-config";
+import { cn } from "@/lib/utils";
 
 /**
- * Sticky site navigation shell.
+ * Sticky, glassmorphic primary navigation.
  *
- * Placeholder content only — nav items point at anchors that will be filled
- * in by the portfolio sections built in a later phase. The structure
- * (desktop links, mobile disclosure menu, theme toggle) is production-ready.
+ * Placeholder nav targets only — the anchors (`#about`, `#projects`, etc.)
+ * are filled in by the portfolio sections built in a later phase. The shell
+ * itself (desktop links, mobile drawer, resume CTA, theme toggle, scroll
+ * reactivity) is production-ready.
  */
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const scrolled = useScrollTrigger(8);
 
   return (
-    <header className="border-border bg-background/80 sticky top-0 z-50 w-full border-b backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between">
-        <Logo />
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+        <Container
+          className={cn(
+            "flex h-14 items-center justify-between rounded-full border px-3 transition-all duration-300 md:px-3",
+            scrolled
+              ? "border-border bg-background/70 shadow-lg backdrop-blur-xl"
+              : "border-transparent bg-transparent shadow-none backdrop-blur-none",
+          )}
+        >
+          <Logo className="pl-2" />
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {primaryNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+          <nav
+            aria-label="Primary"
+            className="hidden items-center gap-7 lg:flex"
+          >
+            {primaryNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="hidden rounded-full lg:inline-flex"
             >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+              <a
+                href={siteConfig.resumeUrl}
+                download
+                aria-label="Download resume"
+              >
+                <Download className="h-4 w-4" />
+                Resume
+              </a>
+            </Button>
 
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-            onClick={() => setIsOpen((open) => !open)}
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
-      </Container>
+            <ThemeToggle />
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="border-border overflow-hidden border-b md:hidden"
-          >
-            <Container className="flex flex-col gap-4 py-4">
-              {primaryNav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </Container>
-          </motion.nav>
-        )}
-      </AnimatePresence>
-    </header>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full lg:hidden"
+              aria-label="Open menu"
+              aria-expanded={isMobileOpen}
+              aria-haspopup="dialog"
+              onClick={() => setIsMobileOpen(true)}
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </div>
+        </Container>
+      </header>
+
+      <MobileNav open={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
+    </>
   );
 }
