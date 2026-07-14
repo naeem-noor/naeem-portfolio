@@ -30,3 +30,17 @@ export interface SocialLink {
  * Mirrors the subset of `next-themes` themes this app supports.
  */
 export type ThemeMode = "light" | "dark" | "system";
+
+/**
+ * One highlighted or plain fragment of a multi-line headline. Shared by any
+ * section (Hero, About, ...) that renders a large heading with an accented
+ * word or phrase inside it.
+ */
+export interface HeadlineSegment {
+  text: string;
+  /** Renders in the accent color instead of the default foreground. */
+  accent?: boolean;
+}
+
+/** A single visual line of a headline, made of one or more segments. */
+export type HeadlineLine = HeadlineSegment[];

@@ -9,7 +9,7 @@ const SIZE_CLASSES = {
     height: 40,
   },
   lg: {
-    width: 250,
+    width: 200,
     height: 75,
   },
 } as const;
