@@ -23,10 +23,10 @@ COPY . .
 
 # Public env vars must be present at build time since Next.js inlines them
 # into the client bundle. Override with --build-arg as needed.
-ARG NEXT_PUBLIC_SITE_URL=http://localhost:3000
-ARG NEXT_PUBLIC_GITHUB=https://github.com
-ARG NEXT_PUBLIC_LINKEDIN=https://linkedin.com
-ARG NEXT_PUBLIC_EMAIL=hello@example.com
+ARG NEXT_PUBLIC_SITE_URL
+ARG NEXT_PUBLIC_GITHUB
+ARG NEXT_PUBLIC_LINKEDIN
+ARG NEXT_PUBLIC_EMAIL
 ENV NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL} \
     NEXT_PUBLIC_GITHUB=${NEXT_PUBLIC_GITHUB} \
     NEXT_PUBLIC_LINKEDIN=${NEXT_PUBLIC_LINKEDIN} \
