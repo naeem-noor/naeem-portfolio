@@ -1,6 +1,14 @@
-import type { HeadlineLine, IconComponent } from "@/types";
+import type { IconComponent } from "@/types";
 
-export type { HeadlineSegment, HeadlineLine } from "@/types";
+/** One highlighted or plain fragment of a headline line. */
+export interface HeadlineSegment {
+  text: string;
+  /** Renders in the accent color instead of the default foreground. */
+  accent?: boolean;
+}
+
+/** A single visual line of the headline, made of one or more segments. */
+export type HeadlineLine = HeadlineSegment[];
 
 export interface HeroAvailability {
   /** e.g. "Open to Opportunities" */
