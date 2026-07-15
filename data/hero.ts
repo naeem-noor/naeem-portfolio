@@ -30,13 +30,13 @@ export const heroContent: HeroContentData = {
 };
 
 export const heroCtas: HeroCtas = {
-  primary: { label: "View Projects", href: "#projects" },
+  primary: { label: "View Projects", href: "/projects" },
   secondary: {
     label: "Download Resume",
     href: siteConfig.resumeUrl,
     download: true,
   },
-  outline: { label: "Contact Me", href: "#contact" },
+  outline: { label: "Contact Me", href: "/contact" },
 };
 
 export const heroStats: HeroStat[] = [

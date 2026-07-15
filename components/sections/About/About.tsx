@@ -1,33 +1,34 @@
-import { CircleCheck } from "lucide-react";
+import { ArrowRight, CircleCheck } from "lucide-react";
+import Link from "next/link";
 
 import { Section } from "@/components/layout/section";
 import { AboutContent } from "@/components/sections/About/AboutContent";
 import { AboutCTA } from "@/components/sections/About/AboutCTA";
 import { AboutHeader } from "@/components/sections/About/AboutHeader";
 import { ExperienceHighlights } from "@/components/sections/About/ExperienceHighlights";
-import { JourneyTimeline } from "@/components/sections/About/JourneyTimeline";
-import { TechnologyFocus } from "@/components/sections/About/TechnologyFocus";
 import { ValuesGrid } from "@/components/sections/About/ValuesGrid";
 import {
   aboutCta,
   aboutHeader,
   aboutSidebar,
   aboutStory,
-  journeyItems,
   sidebarLocationIcon as LocationIcon,
-  techFocus,
 } from "@/data/about";
 import Image from "next/image";
 
 /**
- * The About / Professional Journey section.
+ * The About page's content: identity, story, quick facts, and values.
+ *
+ * The detailed chronological work history now lives on its own `/experience`
+ * route, and the full technology chip cloud on `/skills` — About links out
+ * to both rather than repeating them, so no page duplicates another page's
+ * detailed content (see the multi-page architecture note in `app/about/page.tsx`).
  *
  * Stays a Server Component: the sidebar (portrait placeholder, badge,
  * location, availability, tech highlights) needs no client JS at all. Each
- * animated piece (`AboutHeader`, `AboutContent`, `JourneyTimeline`,
- * `ExperienceHighlights`, `TechnologyFocus`, `ValuesGrid`, `AboutCTA`) is an
- * isolated Client Component composed in here rather than pulling the whole
- * section across the boundary.
+ * animated piece (`AboutHeader`, `AboutContent`, `ExperienceHighlights`,
+ * `ValuesGrid`, `AboutCTA`) is an isolated Client Component composed in here
+ * rather than pulling the whole page across the boundary.
  */
 export function About() {
   return (
@@ -102,6 +103,14 @@ export function About() {
               </span>
             ))}
           </div>
+
+          <Link
+            href="/skills"
+            className="text-primary inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
+          >
+            View all skills
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
         </aside>
 
         {/* Right column — story. */}
@@ -109,16 +118,21 @@ export function About() {
           <div className="flex flex-col gap-8">
             <AboutHeader header={aboutHeader} />
             <AboutContent paragraphs={aboutStory} />
-          </div>
 
-          <JourneyTimeline items={journeyItems} />
+            <Link
+              href="/experience"
+              className="text-primary inline-flex w-fit items-center gap-1.5 text-sm font-medium hover:underline"
+            >
+              View my full professional journey
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </Link>
+          </div>
 
           <ExperienceHighlights />
         </div>
       </div>
 
       <div className="mt-20 flex flex-col gap-20">
-        <TechnologyFocus chips={techFocus} />
         <ValuesGrid />
         <AboutCTA cta={aboutCta} />
       </div>

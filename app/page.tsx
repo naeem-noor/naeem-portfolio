@@ -1,11 +1,15 @@
-import { About } from "@/components/sections/About/About";
-import { Hero } from "@/components/sections/Hero";
+import type { Metadata } from "next";
+
+import { Home } from "@/components/sections/Home";
+import { createPageMetadata } from "@/lib/metadata";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = createPageMetadata({
+  title: siteConfig.title,
+  description: siteConfig.description,
+  path: "/",
+});
 
 export default function HomePage() {
-  return (
-    <>
-      <Hero />
-      <About />
-    </>
-  );
+  return <Home />;
 }

@@ -68,14 +68,14 @@ export function Footer() {
             reserved.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          {/* <div className="flex flex-wrap items-center justify-center gap-2">
             {techStack.map(({ label, icon: Icon }) => (
               <Badge key={label}>
                 <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                 {label}
               </Badge>
             ))}
-          </div>
+          </div> */}
         </Container>
       </div>
     </footer>

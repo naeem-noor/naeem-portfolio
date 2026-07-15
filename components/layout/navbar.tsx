@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { Download, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { NavLink } from "@/components/layout/nav-link";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Logo } from "@/components/shared/logo";
 import { primaryNav } from "@/data/navigation";
@@ -17,10 +17,10 @@ import { cn } from "@/lib/utils";
 /**
  * Sticky, glassmorphic primary navigation.
  *
- * Placeholder nav targets only — the anchors (`#about`, `#projects`, etc.)
- * are filled in by the portfolio sections built in a later phase. The shell
- * itself (desktop links, mobile drawer, resume CTA, theme toggle, scroll
- * reactivity) is production-ready.
+ * Nav items are real App Router routes (`/about`, `/projects`, etc.) — the
+ * active route is highlighted via `NavLink`. The shell itself (desktop
+ * links, mobile drawer, resume CTA, theme toggle, scroll reactivity) is
+ * production-ready; each route's own page content is defined under `app/`.
  */
 export function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -44,13 +44,14 @@ export function Navbar() {
             className="hidden items-center gap-7 lg:flex"
           >
             {primaryNav.map((item) => (
-              <Link
+              <NavLink
                 key={item.href}
                 href={item.href}
                 className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+                activeClassName="text-foreground"
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
 

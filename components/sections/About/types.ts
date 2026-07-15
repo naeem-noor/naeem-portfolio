@@ -5,7 +5,8 @@ export interface AboutSidebarData {
   experienceBadge: string;
   location: string;
   availability: string;
-  /** A short, high-signal subset of `techFocus` shown in the sidebar. */
+  /** A short, high-signal subset of skills shown in the sidebar (the full
+   * list lives on the dedicated `/skills` page). */
   techHighlights: string[];
 }
 
@@ -22,22 +23,6 @@ export interface AboutStat {
   value: string;
   label: string;
   icon: IconComponent;
-}
-
-/** One stop on the professional journey timeline. */
-export interface JourneyItem {
-  id: string;
-  place: string;
-  period: string;
-  description: string;
-  /** Marks the current/active stop, styled distinctly on the timeline. */
-  current?: boolean;
-}
-
-export interface TechChip {
-  label: string;
-  /** Renders a small qualifier badge, e.g. "Learning". */
-  status?: string;
 }
 
 export interface ValueItem {

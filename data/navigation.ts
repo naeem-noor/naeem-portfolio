@@ -8,10 +8,10 @@ import type { NavItem } from "@/types";
  * links to exist and behave correctly.
  */
 export const primaryNav: NavItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Experience", href: "/experience" },
+  { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
+  { label: "Certifications", href: "/certifications" },
+  { label: "Contact", href: "/contact" },
 ];

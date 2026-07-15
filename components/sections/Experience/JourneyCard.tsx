@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 
-import { timelineItemVariant } from "@/components/sections/About/constants";
-import type { JourneyItem } from "@/components/sections/About/types";
+import { timelineItemVariant } from "@/components/sections/Experience/constants";
+import type { JourneyItem } from "@/components/sections/Experience/types";
 import { cn } from "@/lib/utils";
 
 export interface JourneyCardProps {

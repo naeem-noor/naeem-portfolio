@@ -37,7 +37,7 @@ export function LoadingScreen() {
         <motion.div
           role="status"
           aria-label="Loading"
-          className="bg-background fixed inset-0 z-[100] flex items-center justify-center"
+          className="bg-background fixed inset-0 z-100 flex items-center justify-center"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}

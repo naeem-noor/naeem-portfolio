@@ -6,6 +6,7 @@ import { Download, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 import { Button } from "@/components/ui/button";
+import { NavLink } from "@/components/layout/nav-link";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { primaryNav } from "@/data/navigation";
 import { socialLinks } from "@/data/social";
@@ -95,13 +96,14 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.05 + index * 0.05 }}
                 >
-                  <Link
+                  <NavLink
                     href={item.href}
                     onClick={onClose}
                     className="text-foreground hover:text-primary block py-3 text-3xl font-semibold tracking-tight transition-colors"
+                    activeClassName="text-primary"
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </motion.div>
               ))}
             </nav>

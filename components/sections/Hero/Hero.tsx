@@ -91,8 +91,8 @@ export function Hero() {
 
       <div className="hidden justify-center pb-8 md:flex">
         <a
-          href="#about"
-          aria-label="Scroll to About section"
+          href="#intro"
+          aria-label="Scroll to introduction"
           className="text-muted-foreground hover:text-foreground animate-bounce-y transition-colors"
         >
           <ChevronDown className="h-5 w-5" aria-hidden="true" />
