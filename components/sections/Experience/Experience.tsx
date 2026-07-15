@@ -1,13 +1,18 @@
 import { Section } from "@/components/layout/section";
-import { JourneyTimeline } from "@/components/sections/Experience/JourneyTimeline";
-import { PageHeader } from "@/components/shared/page-header";
-import { experienceHeader, journeyItems } from "@/data/experience";
+import { ExperienceCTA } from "@/components/sections/Experience/ExperienceCTA";
+import { ExperienceHeader } from "@/components/sections/Experience/ExperienceHeader";
+import { ExperienceTimeline } from "@/components/sections/Experience/ExperienceTimeline";
+import { SummaryCards } from "@/components/sections/Experience/SummaryCards";
+import { experienceHeader } from "@/data/experience";
 
 /**
- * The Experience page's content: a header plus the full professional
- * journey timeline. Stays a Server Component — `PageHeader` and
- * `JourneyTimeline` are the only pieces that need client JS (for their
- * scroll-triggered entrances), each isolated in its own file.
+ * The Experience page's content: header + intro, summary stat cards, the
+ * full timeline of roles, and a closing CTA.
+ *
+ * Stays a Server Component: the background is pure CSS, and each animated
+ * piece (`ExperienceHeader`, `SummaryCards`, `ExperienceTimeline`,
+ * `ExperienceCTA`) is an isolated Client Component composed in here rather
+ * than pulling the whole page across the boundary.
  */
 export function Experience() {
   return (
@@ -23,20 +28,29 @@ export function Experience() {
               "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
             backgroundSize: "56px 56px",
             maskImage:
-              "radial-gradient(ellipse 70% 60% at 50% 20%, black, transparent)",
+              "radial-gradient(ellipse 70% 60% at 50% 15%, black, transparent)",
           }}
+        />
+        <div
+          className="animate-glow-pulse absolute top-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full opacity-25 blur-[110px]"
+          style={{ backgroundColor: "var(--primary)" }}
         />
       </div>
 
-      <div className="flex flex-col gap-14">
-        <PageHeader
+      <div className="flex flex-col gap-16">
+        <ExperienceHeader
           label={experienceHeader.label}
           headline={experienceHeader.headline}
+          intro={experienceHeader.intro}
         />
 
-        <div className="max-w-2xl">
-          <JourneyTimeline items={journeyItems} />
+        <SummaryCards />
+
+        <div className="max-w-3xl">
+          <ExperienceTimeline />
         </div>
+
+        <ExperienceCTA />
       </div>
     </Section>
   );

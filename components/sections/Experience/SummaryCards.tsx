@@ -5,18 +5,17 @@ import { motion } from "framer-motion";
 import {
   cardFadeUp,
   staggerContainer,
-} from "@/components/sections/About/constants";
-import { aboutStats } from "@/data/about";
+} from "@/components/sections/Experience/constants";
+import { experienceSummary } from "@/data/experience";
 
 /**
- * A 2x2 (mobile) / 4-across (desktop) grid of premium stat cards.
- *
- * Imports `aboutStats` directly rather than taking it as a prop: the stat
- * icons are component references, and passing functions from the parent
- * Server Component as props across the client boundary isn't supported —
- * a plain module import sidesteps that (same approach as `HeroStats`).
+ * A 2x2 (mobile) / 4-across (desktop) grid of quick-stat cards above the
+ * timeline. Imports `experienceSummary` directly rather than via a prop —
+ * the icons are component references, which can't cross the Server-to-
+ * Client prop boundary (same reasoning as `HeroStats`/`ExperienceHighlights`
+ * elsewhere in the app).
  */
-export function ExperienceHighlights() {
+export function SummaryCards() {
   return (
     <motion.dl
       variants={staggerContainer(0.08, 0)}
@@ -25,7 +24,7 @@ export function ExperienceHighlights() {
       viewport={{ once: true, margin: "-60px" }}
       className="grid grid-cols-2 gap-3 sm:grid-cols-4"
     >
-      {aboutStats.map(({ id, value, label, icon: Icon }) => (
+      {experienceSummary.map(({ id, value, label, icon: Icon }) => (
         <motion.div
           key={id}
           variants={cardFadeUp}

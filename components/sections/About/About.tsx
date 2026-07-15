@@ -5,7 +5,6 @@ import { Section } from "@/components/layout/section";
 import { AboutContent } from "@/components/sections/About/AboutContent";
 import { AboutCTA } from "@/components/sections/About/AboutCTA";
 import { AboutHeader } from "@/components/sections/About/AboutHeader";
-import { ExperienceHighlights } from "@/components/sections/About/ExperienceHighlights";
 import { ValuesGrid } from "@/components/sections/About/ValuesGrid";
 import {
   aboutCta,
@@ -127,8 +126,6 @@ export function About() {
               <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
             </Link>
           </div>
-
-          <ExperienceHighlights />
         </div>
       </div>
 

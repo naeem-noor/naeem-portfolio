@@ -1,9 +1,34 @@
-/** One stop on the professional journey timeline. */
-export interface JourneyItem {
+import type { IconComponent } from "@/types";
+
+export interface Achievement {
+  text: string;
+  icon: IconComponent;
+}
+
+export interface WorkExperience {
   id: string;
-  place: string;
-  period: string;
-  description: string;
-  /** Marks the current/active stop, styled distinctly on the timeline. */
+  company: string;
+  location: string;
+  country: string;
+  employmentType: string;
+  role: string;
+  duration: string;
+  /** Short descriptor of the working environment, e.g. "Enterprise IT". */
+  environment: string;
+  summary: string;
+  responsibilities: string[];
+  achievements: Achievement[];
+  technologies: string[];
+  /** Path to a company logo image, once real assets exist — optional, and
+   * `CompanyCard` falls back to a generic icon avatar when absent. */
+  companyLogo?: string;
+  /** Marks the most recent/active role, highlighted distinctly on the timeline. */
   current?: boolean;
+}
+
+export interface SummaryStat {
+  id: string;
+  value: string;
+  label: string;
+  icon: IconComponent;
 }

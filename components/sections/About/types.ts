@@ -17,14 +17,6 @@ export interface AboutHeaderData {
 
 /** A single paragraph of the professional-story copy. */
 export type StoryParagraph = string;
-
-export interface AboutStat {
-  id: string;
-  value: string;
-  label: string;
-  icon: IconComponent;
-}
-
 export interface ValueItem {
   id: string;
   title: string;

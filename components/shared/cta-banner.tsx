@@ -51,7 +51,7 @@ export function CtaBanner({ heading, primary, secondary }: CtaBannerProps) {
         </Button>
 
         <Button asChild variant="outline" size="lg" className="rounded-full">
-          <a href={secondary.href} download={secondary.download}>
+          <a href={secondary.href}>
             <secondary.icon className="h-4 w-4" />
             {secondary.label}
           </a>

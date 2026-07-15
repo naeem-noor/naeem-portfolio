@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import { cardFadeUp, staggerContainer } from "@/lib/motion";
-import { journeyItems } from "@/data/experience";
+import { workExperience } from "@/data/experience";
 
 /**
- * Home page preview of the two most recent stops on the professional
- * journey (the full timeline lives on `/experience`). Deliberately doesn't
- * reuse `JourneyCard`/its connecting-line dot — that visual motif is
- * specific to an actual multi-stop timeline, not a two-item preview.
+ * Home page preview of the two most recent roles (the full timeline with
+ * responsibilities, achievements, and tech stacks lives on `/experience`).
+ * `workExperience` is already ordered most-recent-first, so this just
+ * takes the first two.
  */
 export function LatestExperience() {
-  const latest = journeyItems.slice(-2);
+  const latest = workExperience.slice(-2);
 
   return (
     <div className="flex flex-col gap-8">
@@ -26,7 +26,7 @@ export function LatestExperience() {
           href="/experience"
           className="text-primary hidden items-center gap-1.5 text-sm font-medium hover:underline sm:inline-flex"
         >
-          View full journey
+          View full experience
           <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
         </Link>
       </div>
@@ -46,14 +46,17 @@ export function LatestExperience() {
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h3 className="text-foreground text-base font-semibold">
-                {item.place}
+                {item.company}
               </h3>
               <span className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
-                {item.period}
+                {item.duration}
               </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
-              {item.description}
+              {item.role}
+            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+              {item.summary}
             </p>
           </motion.div>
         ))}
@@ -63,7 +66,7 @@ export function LatestExperience() {
         href="/experience"
         className="text-primary inline-flex items-center gap-1.5 text-sm font-medium hover:underline sm:hidden"
       >
-        View full journey
+        View full experience
         <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
       </Link>
     </div>

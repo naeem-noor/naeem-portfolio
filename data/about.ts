@@ -1,8 +1,5 @@
 import {
   BadgeCheck,
-  Building2,
-  Clock,
-  Globe,
   MapPin,
   Sparkles,
   TrendingUp,
@@ -13,7 +10,6 @@ import type {
   AboutCtaData,
   AboutHeaderData,
   AboutSidebarData,
-  AboutStat,
   StoryParagraph,
   ValueItem,
 } from "@/components/sections/About/types";
@@ -45,18 +41,6 @@ export const aboutStory: StoryParagraph[] = [
   "I started out fixing what other people's infrastructure broke laptops, networks, Active Directory, whatever an enterprise environment could throw at a support desk. Five years in, across Pakistan, the UAE, and Australia, that's given me a pretty unglamorous but honest education in how IT actually runs when a lot of people depend on it working.",
   "Some of that time was inside one of the busiest airports in the world, where downtime isn't an inconvenience, it's an incident. That environment taught me to think in terms of reliability first, features second a habit that's followed me into everything since.",
   "These days I'm pointing that same instinct at cloud and DevOps: Docker, Terraform, CI/CD pipelines, infrastructure as code. Less time keeping existing systems alive by hand, more time building the automation that keeps them alive on its own.",
-];
-
-export const aboutStats: AboutStat[] = [
-  { id: "years", value: "5+", label: "Years Experience", icon: Clock },
-  { id: "countries", value: "3", label: "Countries", icon: Globe },
-  {
-    id: "enterprise",
-    value: "Enterprise",
-    label: "Infrastructure",
-    icon: Building2,
-  },
-  { id: "devops", value: "Cloud", label: "DevOps Journey", icon: Workflow },
 ];
 
 export const values: ValueItem[] = [

@@ -37,7 +37,7 @@ export function Navbar() {
               : "border-transparent bg-transparent shadow-none backdrop-blur-none",
           )}
         >
-          <Logo className="pl-2" />
+          <Logo size="sm" className="pl-2" />
 
           <nav
             aria-label="Primary"
