@@ -31,7 +31,7 @@ export const aboutHeader: AboutHeaderData = {
   headline: [
     [{ text: "Engineering Reliable Infrastructure," }],
     [
-      { text: "Building the Future with " },
+      { text: "Powering Modern IT with Networking " },
       { text: "Cloud & DevOps.", accent: true },
     ],
   ],

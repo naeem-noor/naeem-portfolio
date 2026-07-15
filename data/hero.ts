@@ -15,17 +15,17 @@ export const heroContent: HeroContentData = {
   greeting: "Hi, I'm",
   name: "Naeem Noor",
   role: "Technical Support Engineer",
-  roleTags: ["Infrastructure", "Cloud", "DevOps"],
+  roleTags: ["Networking", "Infrastructure", "Cloud", "DevOps"],
   headline: [
     [{ text: "Building " }, { text: "Reliable Infrastructure,", accent: true }],
     [{ text: "Cloud Solutions", accent: true }, { text: " &" }],
     [{ text: "Modern " }, { text: "DevOps Workflows.", accent: true }],
   ],
   description:
-    "5+ years supporting enterprise IT infrastructure across Pakistan, the UAE, and Australia. These days I'm moving deeper into cloud and DevOps — shipping production-grade infrastructure projects and automating the systems I used to support by hand.",
+    "5+ years supporting enterprise IT infrastructure across Pakistan, the UAE, and Australia. These days I'm moving deeper into cloud and DevOps shipping production-grade infrastructure projects and automating the systems I used to support by hand.",
   availability: {
     status: "Open to Opportunities",
-    tags: ["Cloud", "DevOps", "Infrastructure"],
+    tags: ["Networking", "Cloud", "DevOps", "It Support"],
   },
 };
 
