@@ -4,6 +4,7 @@ import { Star, Users } from "lucide-react";
 import { GitHubIcon } from "@/components/shared/brand-icons";
 import { Button } from "@/components/ui/button";
 import type { GitHubStats } from "@/lib/github";
+import { siteConfig } from "@/lib/site-config";
 
 export interface GitHubSectionProps {
   stats: GitHubStats;
@@ -59,10 +60,21 @@ export function GitHubSection({ stats }: GitHubSectionProps) {
         </div>
 
         <Button asChild variant="outline" className="rounded-full">
-          <Link href={profile.htmlUrl} target="_blank" rel="noreferrer">
-            <GitHubIcon className="h-4 w-4" />
-            View Profile
-          </Link>
+          {live ? (
+            <Link href={profile.htmlUrl} target="_blank" rel="noreferrer">
+              <GitHubIcon className="h-4 w-4" />
+              View Profile
+            </Link>
+          ) : (
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubIcon className="h-4 w-4" />
+              View Profile
+            </Link>
+          )}
         </Button>
       </div>
     </div>
