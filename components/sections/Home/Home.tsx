@@ -1,8 +1,5 @@
 import { Section } from "@/components/layout/section";
-import { FeaturedProjects } from "@/components/sections/Home/FeaturedProjects";
 import { HomeCTA } from "@/components/sections/Home/HomeCTA";
-import { HomeIntro } from "@/components/sections/Home/HomeIntro";
-import { LatestExperience } from "@/components/sections/Home/LatestExperience";
 import { Hero } from "@/components/sections/Hero";
 
 /**
@@ -18,16 +15,8 @@ export function Home() {
   return (
     <>
       <Hero />
-      <HomeIntro />
 
-      <Section spacing="lg">
-        <div className="flex flex-col gap-24">
-          <FeaturedProjects />
-          <LatestExperience />
-        </div>
-      </Section>
-
-      <Section spacing="lg">
+      <Section spacing="sm">
         <HomeCTA />
       </Section>
     </>

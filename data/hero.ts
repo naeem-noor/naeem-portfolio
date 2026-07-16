@@ -1,4 +1,4 @@
-import { Boxes, Clock, Cloud, FileText, FolderGit2, Globe } from "lucide-react";
+import { Boxes, Clock, Cloud, FolderGit2, Globe } from "lucide-react";
 
 import { socialLinks } from "@/data/social";
 import { siteConfig } from "@/lib/site-config";
@@ -51,10 +51,7 @@ export const heroStats: HeroStat[] = [
  * (single source of truth for those links); Resume is Hero-specific, so
  * it's appended here rather than added to the global social link list.
  */
-export const heroSocialLinks: SocialLink[] = [
-  ...socialLinks,
-  { label: "Resume", href: siteConfig.resumeUrl, icon: FileText },
-];
+export const heroSocialLinks: SocialLink[] = [...socialLinks];
 
 /** Lines rendered inside the illustration's terminal-window mockup. */
 export const heroTerminalLines: HeroTerminalLine[] = [

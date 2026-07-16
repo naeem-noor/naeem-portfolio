@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+// import { ChevronDown } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { HeroBadge } from "@/components/sections/Hero/HeroBadge";
@@ -89,7 +89,7 @@ export function Hero() {
         <HeroIllustration />
       </Container>
 
-      <div className="hidden justify-center pb-8 md:flex">
+      {/* <div className="hidden justify-center pb-8 md:flex">
         <a
           href="#intro"
           aria-label="Scroll to introduction"
@@ -97,7 +97,7 @@ export function Hero() {
         >
           <ChevronDown className="h-5 w-5" aria-hidden="true" />
         </a>
-      </div>
+      </div> */}
     </section>
   );
 }

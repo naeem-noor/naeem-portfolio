@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Projects",
   description:
-    "Projects Naeem Noor is building, from an AI-assisted university discovery platform to a multi-tenant support-ticket automation SaaS.",
+    "Engineering case studies from Naeem Noor — an AI-assisted university discovery platform, a multi-tenant support-ticket automation SaaS, and this portfolio itself.",
   path: "/projects",
 });
 

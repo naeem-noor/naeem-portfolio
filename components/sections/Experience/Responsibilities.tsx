@@ -1,11 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { useId, useState } from "react";
 
-import { expandVariant } from "@/components/sections/Experience/constants";
 import { cn } from "@/lib/utils";
+import { ExpandPanel } from "@/components/shared/expand-panel";
+import { useDisclosure } from "@/hooks/use-disclosure";
 
 export interface ResponsibilitiesProps {
   items: string[];
@@ -21,10 +20,9 @@ export interface ResponsibilitiesProps {
  */
 export function Responsibilities({
   items,
-  initialCount = 3,
+  initialCount = 2,
 }: ResponsibilitiesProps) {
-  const [expanded, setExpanded] = useState(false);
-  const panelId = useId();
+  const { isOpen, toggle, panelId } = useDisclosure();
 
   const visible = items.slice(0, initialCount);
   const hidden = items.slice(initialCount);
@@ -44,14 +42,7 @@ export function Responsibilities({
 
       {hidden.length > 0 ? (
         <>
-          <motion.div
-            id={panelId}
-            initial="collapsed"
-            animate={expanded ? "expanded" : "collapsed"}
-            variants={expandVariant}
-            style={{ display: "grid" }}
-            className="overflow-hidden"
-          >
+          <ExpandPanel isOpen={isOpen} id={panelId}>
             <ul className="text-muted-foreground flex min-h-0 flex-col gap-2 text-sm">
               {hidden.map((item, index) => (
                 <li key={index} className="flex gap-2.5 pt-2 first:pt-0">
@@ -62,20 +53,20 @@ export function Responsibilities({
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </ExpandPanel>
 
           <button
             type="button"
-            onClick={() => setExpanded((value) => !value)}
-            aria-expanded={expanded}
+            onClick={toggle}
+            aria-expanded={isOpen}
             aria-controls={panelId}
             className="text-primary inline-flex w-fit items-center gap-1 text-sm font-medium hover:underline"
           >
-            {expanded ? "View Less" : "View More"}
+            {isOpen ? "View Less" : "View More"}
             <ChevronDown
               className={cn(
                 "h-3.5 w-3.5 transition-transform duration-200",
-                expanded && "rotate-180",
+                isOpen && "rotate-180",
               )}
               aria-hidden="true"
             />
