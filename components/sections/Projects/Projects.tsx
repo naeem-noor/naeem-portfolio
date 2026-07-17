@@ -58,7 +58,7 @@ export async function Projects() {
           <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
             Projects
           </h2>
-          {/* <ProjectsGrid /> */}
+          <ProjectsGrid />
         </div>
 
         <div className="flex flex-col gap-8">
