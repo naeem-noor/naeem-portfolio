@@ -11,11 +11,5 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function ProjectsPage() {
-  // return <Projects />;
-  return (
-    <div>
-      <h1>Projects</h1>
-      <p>Hello</p>
-    </div>
-  );
+  return <Projects />;
 }
