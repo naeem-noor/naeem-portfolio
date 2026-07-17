@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Skills",
   description:
-    "The tools and technologies Naeem Noor works with across cloud infrastructure, DevOps automation, and networking — AWS, Docker, Terraform, and more.",
+    "Naeem Noor's technology stack — enterprise infrastructure and networking expertise extending into cloud platforms, DevOps automation, and modern web development.",
   path: "/skills",
 });
 
