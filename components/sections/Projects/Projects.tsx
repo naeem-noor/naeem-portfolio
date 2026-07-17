@@ -45,7 +45,7 @@ export async function Projects() {
       </div>
 
       <div className="flex flex-col gap-20">
-        <ProjectsHero />
+        {/* <ProjectsHero /> */}
 
         {/* <div className="flex flex-col gap-8">
           <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
