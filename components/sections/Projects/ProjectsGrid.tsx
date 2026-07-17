@@ -30,7 +30,7 @@ export function ProjectsGrid() {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* <ProjectFilters selected={category} onChange={setCategory} /> */}
+      {/* <ProjectFilters selected={category} onChange={setCategory} />
 
       <motion.div layout className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
@@ -58,7 +58,8 @@ export function ProjectsGrid() {
             </motion.p>
           )}
         </AnimatePresence>
-      </motion.div>
+      </motion.div> */}
+      <p>Testing...................</p>
     </div>
   );
 }
