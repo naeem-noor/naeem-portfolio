@@ -58,24 +58,24 @@ export async function Projects() {
           <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
             Projects
           </h2>
-          <ProjectsGrid />
+          {/* <ProjectsGrid /> */}
         </div>
 
         <div className="flex flex-col gap-8">
           <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
             GitHub & Open Source
           </h2>
-          {/* <GitHubSection stats={githubStats} /> */}
+          <GitHubSection stats={githubStats} />
         </div>
 
         <div className="flex flex-col gap-8">
           <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
             What&rsquo;s Next
           </h2>
-          {/* <FutureProjects /> */}
+          <FutureProjects />
         </div>
 
-        {/* <ProjectsCTA /> */}
+        <ProjectsCTA />
       </div>
     </Section>
   );
