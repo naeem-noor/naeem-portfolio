@@ -43,7 +43,7 @@ export function ProjectFilters({ selected, onChange }: ProjectFiltersProps) {
           >
             {isActive ? (
               <motion.span
-                layoutId="project-filter-active"
+                // layoutId="project-filter-active"
                 className="bg-primary absolute inset-0 rounded-full"
                 transition={{ duration: 0.25, ease: "easeOut" }}
               />
