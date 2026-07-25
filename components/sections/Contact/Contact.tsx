@@ -1,72 +1,59 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
 import { Section } from "@/components/layout/section";
-import { PageHeader } from "@/components/shared/page-header";
-import { socialLinks } from "@/data/social";
-import { siteConfig } from "@/lib/site-config";
-import type { HeadlineLine } from "@/types";
-
-const headline: HeadlineLine[] = [
-  [{ text: "Let's Talk" }],
-  [{ text: "Infrastructure.", accent: true }],
-];
+import { AvailabilitySection } from "@/components/sections/Contact/AvailabilitySection";
+import { ContactForm } from "@/components/sections/Contact/ContactForm";
+import { ContactHero } from "@/components/sections/Contact/ContactHero";
+import { ContactInformation } from "@/components/sections/Contact/ContactInformation";
+import { ResumeCTA } from "@/components/sections/Contact/ResumeCTA";
 
 /**
- * The Contact page's content: a header plus direct contact channels.
- * Deliberately not a form yet — a validated contact form is real,
- * substantial scope of its own (and the `useZodForm` hook is already wired
- * up and waiting for it); until then, these are real, working links rather
- * than a stub.
+ * The Contact page's content, in the required order: hero, contact
+ * information, contact form, availability/collaboration, resume CTA,
+ * social links.
  *
- * Stays a Server Component: `PageHeader` is the only piece needing client
- * JS, everything else here is static.
+ * Independent by design — this is the *only* place the full contact form
+ * renders; Home's own CTA only links here (`/contact`), it never
+ * duplicates this form.
+ *
+ * Stays a Server Component: the background is pure CSS, and each animated
+ * or interactive piece (`ContactInformation`, `ContactForm`,
+ * `AvailabilitySection`, `ResumeCTA`, `SocialLinks`) is an isolated Client
+ * Component composed in here rather than pulling the whole page across
+ * the boundary.
  */
 export function Contact() {
   return (
-    <Section spacing="lg">
-      <div className="flex flex-col gap-14">
-        <PageHeader label="Contact" headline={headline} />
+    <Section spacing="lg" className="relative isolate overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 10%, black, transparent)",
+          }}
+        />
+        <div
+          className="animate-glow-pulse absolute top-0 right-1/3 h-72 w-72 rounded-full opacity-25 blur-[110px]"
+          style={{ backgroundColor: "var(--primary)" }}
+        />
+      </div>
 
-        <div className="flex max-w-2xl flex-col gap-6">
-          <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
-            The fastest way to reach me is email — I&rsquo;m also on GitHub and
-            LinkedIn if you&rsquo;d rather connect there first.
-          </p>
+      <div className="flex flex-col gap-16">
+        <ContactHero />
 
-          <div className="flex flex-col gap-3">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
-              <Link
-                key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noreferrer" : undefined}
-                className="border-border bg-surface/60 hover:border-border-strong hover:bg-surface group flex items-center justify-between gap-3 rounded-xl border p-4 backdrop-blur-sm transition-colors"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">
-                    <Icon
-                      className="text-primary h-4.5 w-4.5"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-foreground text-sm font-semibold">
-                      {label}
-                    </span>
-                    <span className="text-muted-foreground text-xs">
-                      {label === "Email" ? siteConfig.links.email : href}
-                    </span>
-                  </div>
-                </div>
-                <ArrowUpRight
-                  className="text-muted-foreground group-hover:text-foreground h-4 w-4 shrink-0 transition-colors"
-                  aria-hidden="true"
-                />
-              </Link>
-            ))}
-          </div>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-12">
+          <ContactInformation />
+          <ContactForm />
         </div>
+
+        <AvailabilitySection />
+
+        {/* <ResumeCTA /> */}
       </div>
     </Section>
   );

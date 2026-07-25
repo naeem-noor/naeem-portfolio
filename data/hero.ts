@@ -1,6 +1,6 @@
 import { Boxes, Clock, Cloud, FolderGit2, Globe } from "lucide-react";
 
-import { socialLinks } from "@/data/social";
+import { socialLinks } from "@/content/social";
 import { siteConfig } from "@/lib/site-config";
 import type {
   HeroContentData,
@@ -13,7 +13,7 @@ import type { SocialLink } from "@/types";
 
 export const heroContent: HeroContentData = {
   greeting: "Hi, I'm",
-  name: "Naeem Noor",
+  name: "Naeem Noor Awan",
   role: "Technical Support Engineer",
   roleTags: ["Networking", "Infrastructure", "Cloud", "DevOps"],
   headline: [

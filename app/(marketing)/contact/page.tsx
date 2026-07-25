@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Get in touch with Naeem Noor — Cloud & DevOps Engineer, available via email, GitHub, and LinkedIn.",
+    "Get in touch with Naeem Noor — open to Cloud Engineering, DevOps, and Infrastructure roles, plus technical collaboration and freelance work.",
   path: "/contact",
 });
 

@@ -17,7 +17,7 @@ export const siteConfig = {
     "Portfolio of a Technical Support Engineer passionate about Networking, Cloud, DevOps, and building reliable IT infrastructure.",
   url: process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL,
   /** Served from `public/resume` — drop the actual file at this path. */
-  resumeUrl: "/resume/naeem_noor.pdf",
+  resumeUrl: "/resume/naeem-noor-resume.pdf",
   links: {
     github: process.env.NEXT_PUBLIC_GITHUB || "https://github.com",
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN || "https://linkedin.com",

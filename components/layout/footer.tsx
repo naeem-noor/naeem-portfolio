@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/layout/container";
 import { Logo } from "@/components/shared/logo";
 import { primaryNav } from "@/data/navigation";
-import { socialLinks } from "@/data/social";
+import { socialLinks } from "@/content/social";
 import { techStack } from "@/data/tech-stack";
 import { siteConfig } from "@/lib/site-config";
 import { getCurrentYear } from "@/utils/date";

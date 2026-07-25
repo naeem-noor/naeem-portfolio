@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/layout/nav-link";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { primaryNav } from "@/data/navigation";
-import { socialLinks } from "@/data/social";
+import { socialLinks } from "@/content/social";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { useLockBodyScroll } from "@/hooks/use-lock-body-scroll";
 import { siteConfig } from "@/lib/site-config";
