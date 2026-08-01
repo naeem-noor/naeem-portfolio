@@ -1,0 +1,86 @@
+name: Docker
+
+# Validates the Docker image independently of the Netlify deployment path.
+# Netlify never runs this Dockerfile — this exists purely to prove the
+# containerized build works and the resulting image actually serves
+# traffic, since that's a real (if secondary) deployment path for this
+# project.
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-validate:
+    name: Build image, run container, verify health
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build image (load locally, no push)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          push: false
+          tags: portfolio:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            NEXT_PUBLIC_SITE_URL=https://example.com
+            NEXT_PUBLIC_GITHUB=https://github.com/example
+            NEXT_PUBLIC_LINKEDIN=https://linkedin.com/in/example
+            NEXT_PUBLIC_EMAIL=hello@example.com
+
+      - name: Start container
+        run: |
+          docker run -d --name portfolio-ci -p 3000:3000 portfolio:ci
+
+      - name: Wait for container to become healthy
+        run: |
+          echo "Waiting for the app to respond on http://localhost:3000 ..."
+          for i in $(seq 1 15); do
+            if curl -fsS http://localhost:3000/ -o /dev/null; then
+              echo "App responded successfully after ${i} attempt(s)."
+              exit 0
+            fi
+            echo "Attempt ${i}/15 failed, retrying in 2s..."
+            sleep 2
+          done
+          echo "App never responded — dumping container logs:"
+          docker logs portfolio-ci
+          exit 1
+
+      - name: Verify a real page returns 200
+        run: |
+          status=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/)
+          echo "Received HTTP status: ${status}"
+          test "${status}" = "200"
+
+      - name: Stop container and verify clean shutdown
+        run: |
+          docker stop portfolio-ci
+          exit_code=$(docker inspect portfolio-ci --format='{{.State.ExitCode}}')
+          echo "Container exit code after stop: ${exit_code}"
+          # 0 = process exited on its own; 143 = 128+SIGTERM, the normal
+          # result of `docker stop` sending SIGTERM to a Node process with
+          # no custom signal handler. Both are a clean stop, not a crash.
+          if [ "${exit_code}" != "0" ] && [ "${exit_code}" != "143" ]; then
+            echo "Unexpected exit code — container may have crashed."
+            docker logs portfolio-ci
+            exit 1
+          fi
+
+      - name: Clean up
+        if: always()
+        run: docker rm -f portfolio-ci || true
