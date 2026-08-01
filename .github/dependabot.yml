@@ -1,0 +1,21 @@
+version: 2
+updates:
+  # Keep npm dependencies current — groups minor/patch updates into one PR
+  # per week to avoid a flood of individual bump PRs; majors get their own
+  # PR since those need a human to actually review the changelog.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  # Keep the GitHub Actions themselves current (actions/checkout,
+  # docker/build-push-action, etc.) — these are code that runs in CI with
+  # repo access, so staying current matters for security too.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

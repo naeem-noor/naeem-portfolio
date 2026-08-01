@@ -1,0 +1,25 @@
+## Netlify build configuration.
+##
+## Netlify auto-detects Next.js and installs @netlify/plugin-nextjs (the
+## OpenNext-based adapter) automatically — this file exists to make the
+## build command explicit and version-controlled, rather than relying
+## solely on dashboard settings that aren't visible in the repo.
+##
+## IMPORTANT: do NOT set DOCKER_BUILD=true in Netlify's environment
+## variables. That flag switches next.config.ts to output: "standalone",
+## which is built for the Docker image and breaks Netlify's adapter (see
+## the comment in next.config.ts). Netlify must always run a normal build.
+
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+## Production branch is configured in the Netlify UI (Site settings > Build
+## & deploy > Continuous deployment > Production branch) rather than here —
+## Netlify does not support setting it via netlify.toml. Set it to "main"
+## to match this repo's branch strategy (see docs/DEVOPS.md).

@@ -7,6 +7,9 @@ FROM node:22-alpine AS deps
 WORKDIR /app
 
 # libc6-compat is required by some native Node addons on Alpine.
+# Package pinning is intentionally skipped because Alpine security updates
+# should be applied automatically.
+# hadolint ignore=DL3018
 RUN apk add --no-cache libc6-compat
 
 COPY package.json package-lock.json ./
@@ -31,7 +34,8 @@ ENV NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL} \
     NEXT_PUBLIC_GITHUB=${NEXT_PUBLIC_GITHUB} \
     NEXT_PUBLIC_LINKEDIN=${NEXT_PUBLIC_LINKEDIN} \
     NEXT_PUBLIC_EMAIL=${NEXT_PUBLIC_EMAIL} \
-    NEXT_TELEMETRY_DISABLED=1
+    NEXT_TELEMETRY_DISABLED=1 \
+    DOCKER_BUILD=true
 
 RUN npm run build
 
