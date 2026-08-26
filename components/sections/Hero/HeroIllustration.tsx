@@ -53,7 +53,7 @@ export function HeroIllustration() {
           <span className="bg-warning/70 h-2.5 w-2.5 rounded-full" />
           <span className="bg-success/70 h-2.5 w-2.5 rounded-full" />
           <span className="text-muted-foreground ml-2 font-mono text-[11px]">
-            infra.sh
+            SOC_TERMINAL
           </span>
         </div>
 

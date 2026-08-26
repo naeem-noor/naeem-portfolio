@@ -10,11 +10,11 @@
 const FALLBACK_SITE_URL = "http://localhost:3000";
 
 export const siteConfig = {
-  name: "Naeem — Technical Support Engineer",
+  name: "Naeem Noor — Cybersecurity Analyst",
   shortName: "Naeem",
-  title: "Naeem | Technical Support Engineer",
+  title: "Naeem Noor | Cybersecurity Analyst",
   description:
-    "Portfolio of a Technical Support Engineer passionate about Networking, Cloud, DevOps, and building reliable IT infrastructure.",
+    "Naeem Noor — Cybersecurity Analyst specializing in threat detection, Security Operations, incident response, and security monitoring.",
   url: process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL,
   /** Served from `public/resume` — drop the actual file at this path. */
   resumeUrl: "/resume/naeem_noor.pdf",

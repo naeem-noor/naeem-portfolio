@@ -1,4 +1,10 @@
-import { Boxes, Clock, Cloud, FolderGit2, Globe } from "lucide-react";
+import {
+  Clock,
+  FlaskConical,
+  Globe,
+  ShieldCheck,
+  Activity,
+} from "lucide-react";
 
 import { socialLinks } from "@/data/social";
 import { siteConfig } from "@/lib/site-config";
@@ -13,19 +19,25 @@ import type { SocialLink } from "@/types";
 
 export const heroContent: HeroContentData = {
   greeting: "Hi, I'm",
-  name: "Naeem Noor",
-  role: "Technical Support Engineer",
-  roleTags: ["Networking", "Infrastructure", "Cloud", "DevOps"],
+  name: "Naeem Noor Awan",
+  role: "Cybersecurity Analyst | SOC Analyst",
+  roleTags: ["Security Operations", "Threat Detection", "Incident Response"],
   headline: [
-    [{ text: "Building " }, { text: "Reliable Infrastructure,", accent: true }],
-    [{ text: "Cloud Solutions", accent: true }, { text: " &" }],
-    [{ text: "Modern " }, { text: "DevOps Workflows.", accent: true }],
+    [
+      { text: "I don't just learn" },
+      { text: " cybersecurity tools.", accent: true },
+    ],
+    [{ text: "I build,", accent: true }, { text: " monitor" }],
+    [
+      { text: "and investigate " },
+      { text: "security environments.", accent: true },
+    ],
   ],
   description:
-    "5+ years supporting enterprise IT infrastructure across Pakistan, the UAE, and Australia. These days I'm moving deeper into cloud and DevOps shipping production-grade infrastructure projects and automating the systems I used to support by hand.",
+    "5+ years of experience supporting enterprise technology environments across Pakistan, the UAE, and Australia. Now specializing in cybersecurity and Security Operations.",
   availability: {
     status: "Open to Opportunities",
-    tags: ["Networking", "Cloud", "DevOps", "It Support"],
+    tags: ["Cybersecurity Analyst", "SOC Analyst"],
   },
 };
 
@@ -40,10 +52,20 @@ export const heroCtas: HeroCtas = {
 };
 
 export const heroStats: HeroStat[] = [
-  { id: "experience", value: "5+", label: "Years Experience", icon: Clock },
-  { id: "projects", value: "20+", label: "Projects", icon: FolderGit2 },
-  { id: "countries", value: "3", label: "Countries Worked", icon: Globe },
-  { id: "focus", value: "Cloud", label: "DevOps", icon: Cloud },
+  { id: "experience", value: "5+", label: "Years in Technology", icon: Clock },
+  { id: "labs", value: "05+", label: "Security Labs", icon: FlaskConical },
+  {
+    id: "countries",
+    value: "PAK . AUS . UAE",
+    label: "Global Experience",
+    icon: Globe,
+  },
+  {
+    id: "focus",
+    value: "Cybersecurity",
+    label: "Security Operations",
+    icon: ShieldCheck,
+  },
 ];
 
 /**
@@ -55,14 +77,26 @@ export const heroSocialLinks: SocialLink[] = [...socialLinks];
 
 /** Lines rendered inside the illustration's terminal-window mockup. */
 export const heroTerminalLines: HeroTerminalLine[] = [
-  { kind: "command", text: "terraform apply" },
-  { kind: "success", text: "Infrastructure provisioned" },
-  { kind: "command", text: "docker compose up -d" },
-  { kind: "success", text: "4 services healthy" },
+  { kind: "command", text: "security-monitor --status" },
+  { kind: "success", text: "SIEM ONLINE" },
+  { kind: "success", text: "Threat Detection ACTIVE" },
+  { kind: "success", text: "Log Monitoring ACTIVE" },
+  { kind: "command", text: "security-alerts --latest" },
+  { kind: "success", text: "HIGH: Brute Force Detected" },
 ];
 
 /** Small metric cards floated over the terminal illustration. */
 export const heroFloatingCards: HeroFloatingCard[] = [
-  { id: "uptime", icon: Cloud, label: "Uptime", value: "99.98%" },
-  { id: "containers", icon: Boxes, label: "Services", value: "Healthy" },
+  {
+    id: "threat-detection",
+    icon: ShieldCheck,
+    label: "Threat Detection",
+    value: "ACTIVE",
+  },
+  {
+    id: "security-operations",
+    icon: Activity,
+    label: "Security Operations",
+    value: "SOC",
+  },
 ];

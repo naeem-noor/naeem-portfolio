@@ -1,11 +1,9 @@
 import Link from "next/link";
 
-import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/layout/container";
 import { Logo } from "@/components/shared/logo";
 import { primaryNav } from "@/data/navigation";
 import { socialLinks } from "@/data/social";
-import { techStack } from "@/data/tech-stack";
 import { siteConfig } from "@/lib/site-config";
 import { getCurrentYear } from "@/utils/date";
 
@@ -67,15 +65,6 @@ export function Footer() {
             &copy; {getCurrentYear()} {siteConfig.shortName}. All rights
             reserved.
           </p>
-
-          {/* <div className="flex flex-wrap items-center justify-center gap-2">
-            {techStack.map(({ label, icon: Icon }) => (
-              <Badge key={label}>
-                <Icon className="h-3.5 w-3.5" aria-hidden="true" />
-                {label}
-              </Badge>
-            ))}
-          </div> */}
         </Container>
       </div>
     </footer>
